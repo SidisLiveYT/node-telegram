@@ -1,0 +1,68 @@
+{
+  "name": "node-telegram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "module": "./src/index.mjs",
+  "types": "./typings/index.d.ts",
+  "files": [
+    "src",
+    "typings"
+  ],
+  "exports": {
+    "./*": "./*",
+    ".": {
+      "require": "./src/index.js",
+      "import": "./src/index.mjs"
+    }
+  },
+  "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "lint:commit": "npm run lint:fix && npm run commit:push",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release --branches main",
+    "test": "node test/process.js",
+    "commit:push": "git add . && npm run commit && git push",
+    "docs": "jsdoc node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jsdoc": "^3.6.10",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-skyceil": "^2.0.0",
+    "nyc": "^15.1.0",
+    "semantic-release": "^19.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">= 16.6.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "author": "Sid is Live YT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SidisLiveYT/Jericho-Player.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SidisLiveYT/Jericho-Player/issues"
+  },
+  "homepage": "https://jericho-player.js.org",
+  "keywords": []
+}
